@@ -5,12 +5,10 @@ import { ApiService } from '../../core/services';
 @Injectable()
 export class UsersResolver implements Resolve<any> {
 
-  constructor(private apiService: ApiService) {
-  }
+  constructor(private apiService: ApiService) {}
 
   resolve(route: ActivatedRouteSnapshot): any {
     const page: number = route.queryParams['page'] || 1;
     return this.apiService.fetchUsers(page);
   }
-
 }

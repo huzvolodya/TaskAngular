@@ -1,3 +1,12 @@
-<button (click)="back()">Back</button>
+<mat-card *ngIf="user">
+    <img *ngIf="user.avatar" mat-card-image [src]="user.avatar">
 
-<app-user-data [user]="user"></app-user-data>
+    <mat-card-header>
+        <mat-card-title>{{ user.getFullName() }}</mat-card-title>
+        <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-footer>
+        <button mat-raised-button (click)="back()">Back</button>
+    </mat-card-footer>
+</mat-card>
